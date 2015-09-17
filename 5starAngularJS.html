@@ -1,29 +1,40 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>5-stars</title>
-</head>
-<body>
-    <div class="starWidget"> 
-        <span class="star"></span>
-        <span class="star"></span>
-        <span class="star"></span>
-        <span class="star"></span>
-        <span class="star"></span>            
-    </div>
-    <!-- CSS -->
-    <style type="text/css" media="screen">
-        .highlight {
-            color: yellow;
-        }
-        .clicked {
-            color: gold;
-        }
-    </style>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+        <script>
+        //NOT DONE
+        angular.module('starWidget', []);
+        angular.module('starWidget')
+          .service('starService', function() {
+            this.starHighlighted = [0, 0, 0, 0, 0];
+            this.starClicked = [0, 0, 0, 0, 0];
 
+          })
+          .controller('starCtrl', ['$scope', 'starService', function($scope, starService) {
+            $scope.state = starService;
+          }]);
+        </script>
+
+        <style type="text/css" media="screen">
+            .highlight {
+                color: yellow;
+            }
+            .clicked {
+                color: gold;
+            }
+        </style>
+    </head>
     
-    <!-- JS -->
-    <script type="text/javascript" charset="utf-8" async defer>
-    </script>
+<body>
+    <div ng-app="count">
+      <div class="starWidget"> 
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>            
+      </div>
+    </div>
 </body>
 </html>
-
