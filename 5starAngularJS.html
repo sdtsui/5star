@@ -9,7 +9,6 @@
           .service('starService', function() {
             this.starHighlighted = [0, 0, 0, 0, 0];
             this.starClicked = [0, 0, 0, 0, 0];
-
           })
           .controller('starCtrl', ['$scope', 'starService', function($scope, starService) {
             $scope.state = starService;
@@ -25,15 +24,11 @@
             }
         </style>
     </head>
-    
+    <!-- String.fromCharCode(9734) -->
 <body>
-    <div ng-app="count">
+    <div ng-app="starWidget" >
       <div class="starWidget"> 
-          <span class="star"></span>
-          <span class="star"></span>
-          <span class="star"></span>
-          <span class="star"></span>
-          <span class="star"></span>            
+          <span class="star" ng-model='starService' ng-repeat="n in model.starHighlighted">x</span>
       </div>
     </div>
 </body>
